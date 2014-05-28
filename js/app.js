@@ -6,10 +6,22 @@ var fuzzyApp = angular.module('fuzzyApp', ['ngRoute']);
        .when('/',{
            
            controller:'',
-           templateUrl:'index.html';
+           templateUrl:'partials/home.html'
            
        })
-       .otherwise({redirectTo: 'index.html'});
+       .when('/home',{
+           controller:'',
+           templateUrl:'partials/home.html'
+       })
+       .when('/fuzzy',{
+           controller:'',
+           templateUrl:'partials/fuzzy.html'
+       })
+       .when('/fuzzier',{
+           controller:'',
+           templateUrl:'partials/fuzzier.html'
+       })
+       .otherwise({redirectTo: 'partials/home.html'});
         
         
     });
