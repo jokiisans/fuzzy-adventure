@@ -1,4 +1,4 @@
-var fuzzyApp = angular.module('fuzzyApp', ['ngRoute']);
+var fuzzyApp = angular.module('fuzzyApp', ['ngRoute', 'basic_controllers']);
 
     fuzzyApp.config(function ($routeProvider){
         
