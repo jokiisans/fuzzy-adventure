@@ -24,7 +24,7 @@ controllers.DataController = function($scope){
     
 }
     
-    
+    //Some comments?
 
 fuzzyApp.controller(controllers);
 
