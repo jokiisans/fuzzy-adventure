@@ -17,7 +17,7 @@ controllers.DataController = function($scope){
     
     
     $scope.people = [
-        {name:'Sanan', city:'Khi'},
+        {name:'Aamir', city:'Khi'},
         {name:'Affan', city: 'rwp'}
     ];
     
