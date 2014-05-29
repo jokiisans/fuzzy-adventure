@@ -24,8 +24,59 @@ controllers.DataController = function($scope){
     
     
 }
-    
-    //Some comments?
 
+controllers.ProgressDemoCtrl = function($scope){
+    
+    $scope.max = 100;
+    $scope.count = 0;
+    
+    $scope.incrementBar = function(){
+        
+        $scope.count++;
+        var temp = Math.floor($scope.count);
+        var type;
+        
+        if (temp < 25) {
+      type = 'danger';//danger
+    } else if (temp < 50) {
+      type = 'warning';//warning
+    } else if (temp < 75) {
+      type = 'info';//info
+    } else {
+      type = 'success';//success
+    }
+     
+        if(temp >= 100){
+            temp = 100;
+        }
+        
+    $scope.count = temp;
+    $scope.type = type;
+        
+    }
+    $scope.incrementBar();
+    
+    $scope.earlySuccess = function(){
+        
+        return 25 >= $scope.count;
+        
+    }
+    $scope.medSuccess = function(){
+        return ($scope.count > 25 && $scope.count <= 75)
+    }
+    $scope.almostSuccess = function(){
+        return($scope.count > 75 && $scope.count <= 99);
+    }
+    $scope.Success = function(){
+        return 100 <= $scope.count;
+    }
+    
+    
+}
+
+
+
+
+    
 fuzzyApp.controller(controllers);
 
