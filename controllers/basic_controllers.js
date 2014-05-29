@@ -56,6 +56,7 @@ controllers.ProgressDemoCtrl = function($scope){
     }
     $scope.incrementBar();
     
+    //Success messages will be showed based on these functions!
     $scope.earlySuccess = function(){
         
         return 25 >= $scope.count;
