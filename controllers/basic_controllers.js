@@ -75,6 +75,35 @@ controllers.ProgressDemoCtrl = function($scope){
     
 }
 
+controllers.getUserDataCtrl = function($scope, $http, $templateCache){
+    
+    $scope.theVar = 4;
+    
+    $scope.method = 'GET';
+    $scope.url = 'http://api.randomuser.me/?results=5&seed=foobar';
+
+    $scope.fetch = function() {
+          $scope.code = null;
+          $scope.response = null;
+
+          $http({
+              method: $scope.method, 
+              url: $scope.url,
+              cache: $templateCache
+          }).
+          success(function(data, status) {
+              $scope.status = status;
+              $scope.data = data;
+          }).
+          error(function(data, status) {
+          $scope.data = data || "Request failed";
+          $scope.status = status;
+          });
+
+    };  
+    $scope.fetch();
+    
+}
 
 
 
